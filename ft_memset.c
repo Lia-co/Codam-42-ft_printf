@@ -6,11 +6,11 @@
 /*   By: sliang <sliang@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/03/19 18:11:32 by sliang        #+#    #+#                 */
-/*   Updated: 2026/06/03 13:39:40 by shiyuan       ########   odam.nl         */
+/*   Updated: 2026/06/04 13:54:39 by sliang        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+/* #include "ft_printf.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
@@ -23,4 +23,4 @@ void	*ft_memset(void *s, int c, size_t n)
 		n--;
 	}
 	return (s);
-}
+} */

@@ -6,7 +6,7 @@
 /*   By: sliang <sliang@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/04/01 11:05:36 by sliang        #+#    #+#                 */
-/*   Updated: 2026/06/03 16:38:26 by shiyuan       ########   odam.nl         */
+/*   Updated: 2026/06/04 13:51:59 by sliang        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	ft_putstr(char *s)
 {
-	int	i;
+	int	count;
 
-	i = 0;
-	while (s[i] != '\0')
+	count = 0;
+	while (s[count] != '\0')
 	{
-		write (1, &s[i], 1);
-		i++;
+		write (1, &s[count], 1);
+		count++;
 	}
-	return i;
+	return count;
 }

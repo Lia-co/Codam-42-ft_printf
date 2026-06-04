@@ -6,13 +6,13 @@
 /*   By: sliang <sliang@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/03/18 17:13:43 by sliang        #+#    #+#                 */
-/*   Updated: 2026/06/03 13:39:04 by shiyuan       ########   odam.nl         */
+/*   Updated: 2026/06/04 13:54:10 by sliang        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+/* #include "ft_printf.h"
 
 void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, '\0', n);
-}
+} */

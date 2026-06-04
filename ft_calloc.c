@@ -6,7 +6,7 @@
 /*   By: sliang <sliang@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/03/25 13:12:35 by sliang        #+#    #+#                 */
-/*   Updated: 2026/06/03 13:40:31 by shiyuan       ########   odam.nl         */
+/*   Updated: 2026/06/04 13:54:15 by sliang        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ LOGIC
 	4. else nmemb or size is not 0, set memory to 0; return the pointer
 */
 
-void	*ft_calloc(size_t nmemb, size_t size)
+/* void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 	size_t	allmem;
@@ -62,4 +62,4 @@ void	*ft_calloc(size_t nmemb, size_t size)
 			ft_bzero(ptr, allmem);
 		return (ptr);
 	}
-}
+} */

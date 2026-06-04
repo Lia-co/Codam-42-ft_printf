@@ -6,10 +6,11 @@
 /*   By: sliang <sliang@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/04/01 11:00:29 by sliang        #+#    #+#                 */
-/*   Updated: 2026/06/03 13:34:38 by shiyuan       ########   odam.nl         */
+/*   Updated: 2026/06/04 13:54:33 by sliang        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 #include "ft_printf.h"
 
 static int	ft_len(int n);
@@ -58,4 +59,4 @@ static int	ft_len(int n)
 		num = num / 10;
 	}
 	return (len);
-}
+} */

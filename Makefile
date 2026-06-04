@@ -6,7 +6,7 @@
 #    By: shiyuan <shiyuan@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2026/06/03 12:53:29 by shiyuan       #+#    #+#                  #
-#    Updated: 2026/06/03 17:14:05 by shiyuan       ########   odam.nl          #
+#    Updated: 2026/06/04 13:58:06 by sliang        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,14 +17,15 @@ WHITE = \033[1;60m
 RESET = \033[0m
 
 NAME = ft_printf.a
-CFLAGS = cc -Wall -Wextra -Werror -g -arch arm64
-SRCS = 	ft_putchr.c \
+CFLAGS = cc -Wall -Wextra -Werror -g
+SRCS = 	ft_printf.c \
+		ft_putchr.c \
 		ft_putstr.c \
 		ft_putnbr.c \
-		ft_bzero.c \
-		ft_calloc.c \
-		ft_itoa.c \
-		ft_memset.c \
+		ft_puthex_upp.c \
+		ft_putptr.c \
+
+#ft_bzero.c \ ft_calloc.c \ ft_itoa.c \ ft_memset.c
 
 OBJS_DIR = objs
 OBJS = $(SRCS:%.c=$(OBJS_DIR)/%.o)
@@ -50,6 +51,6 @@ $(OBJS_DIR)/%.o: %.c | $(OBJS_DIR)
 	@echo "$(WHITE)compiling file $< -->$(RESET) $(GREEN)$@ $(RESET)" 
 
 $(OBJS_DIR):
-	mkdir -p $(OBJS_DIR)
-
+	@mkdir -p $(OBJS_DIR)
+	@echo "$(GREEN)objects directory is created.$(RESET)"
 .PHONY: all clean fclean re

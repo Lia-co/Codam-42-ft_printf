@@ -19,6 +19,14 @@ int main(void)
 	int	num;
 
 	str = "shiyuan";
-	num = ft_putstr(str);
-	printf("%d\n", num);
+	while(*str != '\0')
+	{
+		if (*str == '%')
+		{
+			str = str + 1;
+			break ;
+		}
+		str++;
+	}
+	printf("%c\n", *str);
 }
