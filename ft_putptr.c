@@ -6,26 +6,24 @@
 /*   By: sliang <sliang@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/06/04 13:30:02 by sliang        #+#    #+#                 */
-/*   Updated: 2026/06/04 15:34:44 by sliang        ########   odam.nl         */
+/*   Updated: 2026/06/05 11:20:35 by shiyuan       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putptr(unsigned long adr, int base)
+int	ft_putptr(uintptr_t ptr, int base, char *symbols)
 {
 	int		count;
-	char	*symbols;
 
 	count = 0;
-	symbols = HEX_LOW;
-	if (adr == 0)
+	if (ptr == 0)
 		return ft_putstr("(nil)");
 	else
 	{
 		ft_putstr("0x");
-		count = ft_putnbr(adr / base, base);
-		return (count + ft_putnbr(adr % base, base) + 2);
+		count = ft_putnbr(ptr / base, base, symbols);
+		return (count + ft_putnbr(ptr % base, base, symbols) + 2);
 	}
 	return count;
 }

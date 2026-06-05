@@ -25,8 +25,8 @@ int	ft_printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			format = format + 1;
-			num_chr += print_format(*format, ptr_args);
+			format++;
+			num_chr += print_conversion(*format, ptr_args);
 		}
 		else
 			num_chr += write(1, format, 1);
@@ -37,7 +37,7 @@ int	ft_printf(const char *format, ...)
 }
 
 //test version
-int print_format(char specifier, va_list ptr_args)
+int print_conversion(char specifier, va_list ptr_args)
 {
 	int	num_chr;
 
@@ -47,15 +47,15 @@ int print_format(char specifier, va_list ptr_args)
 	else if (specifier == 's')
 		num_chr += ft_putstr(va_arg(ptr_args, char *));
 	else if (specifier == 'd' || specifier == 'i')
-		num_chr += ft_putnbr((long)va_arg(ptr_args, int), BASE_DEC);
+		num_chr += ft_putnbr((long)va_arg(ptr_args, int), BASE_DEC, DEC);
 	else if (specifier == 'u')
-		num_chr += ft_putnbr((long)va_arg(ptr_args, unsigned int), BASE_DEC);
+		num_chr += ft_putnbr((long)va_arg(ptr_args, unsigned int), BASE_DEC, DEC);
 	else if (specifier == 'x')
-		num_chr += ft_putnbr((long)va_arg(ptr_args, unsigned int), BASE_HEX);//why use unsigned int? hex without any negative sign
+		num_chr += ft_putnbr((long)va_arg(ptr_args, unsigned int), BASE_HEX, HEX_LOW);//why use unsigned int? hex without any negative sign
 	else if (specifier == 'X')
-		num_chr += ft_puthex_upp((long)va_arg(ptr_args, unsigned int), BASE_HEX);
+		num_chr += ft_putnbr((long)va_arg(ptr_args, unsigned int), BASE_HEX, HEX_UPP);
 	else if (specifier == 'p')
-		num_chr += ft_putptr((unsigned long)va_arg(ptr_args, void *), BASE_HEX);//why do I need unsigned long here?
+		num_chr += ft_putptr((uintptr_t)va_arg(ptr_args, void *), BASE_HEX, HEX_LOW);
 	else if (specifier == '%')
 		num_chr += write(1, &specifier, 1);
 	return num_chr;
