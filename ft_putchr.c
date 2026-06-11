@@ -6,7 +6,7 @@
 /*   By: sliang <sliang@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/04/01 11:04:57 by sliang        #+#    #+#                 */
-/*   Updated: 2026/06/03 17:07:23 by shiyuan       ########   odam.nl         */
+/*   Updated: 2026/06/06 16:13:03 by sliang        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_putchr(int c)
 {
-	return write(1, &c, 1);
+	return (write(1, &c, 1));
 }

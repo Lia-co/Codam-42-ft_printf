@@ -6,7 +6,7 @@
 #    By: shiyuan <shiyuan@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2026/06/03 12:53:29 by shiyuan       #+#    #+#                  #
-#    Updated: 2026/06/05 11:22:49 by shiyuan       ########   odam.nl          #
+#    Updated: 2026/06/11 15:11:35 by sliang        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ RED = \033[31m
 WHITE = \033[1;60m
 RESET = \033[0m
 
-NAME = ft_printf.a
-CFLAGS = cc -Wall -Wextra -Werror -g -arch arm64
+NAME = libftprintf.a
+CFLAGS = cc -Wall -Wextra -Werror -g
 SRCS = 	ft_printf.c \
 		ft_putchr.c \
 		ft_putstr.c \

@@ -6,21 +6,22 @@
 /*   By: sliang <sliang@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/06/04 13:43:19 by sliang        #+#    #+#                 */
-/*   Updated: 2026/06/05 12:47:21 by shiyuan       ########   odam.nl         */
+/*   Updated: 2026/06/11 17:54:37 by sliang        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void int_test(int test);
-void chr_test(char test);
-void str_test(char *test);
-void hex_test(int test);
-void uint_test(unsigned int test);
-void ptr_test(int test);
+void	int_test(int test);
+void	chr_test(char test);
+void	str_test(char *test);
+void	hex_test(int test);
+void	uint_test(unsigned int test);
+void	ptr_test(int test);
+void	null_ptr_test(int *test);
 
 int	main(void)
-{	
+{
 	printf("|------------test for characters-----------|\n");
 	chr_test('a');
 	chr_test('b');
@@ -30,18 +31,36 @@ int	main(void)
 	chr_test('%');
 	chr_test('\\');
 	printf("\n");
-	
+
 	printf("|------------test for strings-----------|\n");
 	str_test("Hi");
 	str_test("alkjdlaiflasdlkjlfskdlfn");
 	str_test("      ");
 	str_test("asjh alksd as ");
 	str_test("sd a*%%#@()|!~");
+	str_test(0);
 	str_test("\\\\\\");
-	str_test("%%%%%%");
+	int null1 = ft_printf(NULL);
+	printf("%d\n", null1);
+	printf(NULL);
+	int null2 = printf(NULL);
+	printf("%d\n", null2);
+	
+	printf("|------------test for %%-----------|\n");
 	ft_printf("%%%%");
 	printf("\n");
 	printf("%%%%");
+	printf("\n");
+	
+	int i = ft_printf("%%%");
+	printf("\n");
+	int n = printf("%%%");
+	printf("\n");
+	printf("%d\n%d", i, n);
+	printf("\n");
+	ft_printf("%%");
+	printf("\n");
+	printf("%%");
 	printf("\n");
 
 	printf("|------------test for (unsigned)integers-----------|\n");
@@ -52,7 +71,7 @@ int	main(void)
 	int_test(-2147483648);
 	uint_test(4294967295);
 	printf("\n");
-	
+
 	printf("|------------test for hexadecimals-----------|\n");
 	hex_test(0);
 	hex_test(1);
@@ -67,17 +86,11 @@ int	main(void)
 	ptr_test(-1);
 	ptr_test(2147483647);
 	ptr_test(-2147483648);
+	null_ptr_test(0);
 	printf("\n");
 }
 
-//how to make my own tester?
-	//printf_test function
-		//passing entry points as arguments
-		//compare diff between ft_printf and printf
-			//output in terminal
-			//number of printed bytes
-
-void int_test(int test)
+void	int_test(int test)
 {
 	int	num_chr1;
 	int	num_chr2;
@@ -90,7 +103,7 @@ void int_test(int test)
 	printf("num of chr | %d\n", num_chr2);
 }
 
-void uint_test(unsigned int test)
+void	uint_test(unsigned int test)
 {
 	int	num_chr1;
 	int	num_chr2;
@@ -103,7 +116,7 @@ void uint_test(unsigned int test)
 	printf("num of chr | %d\n", num_chr2);
 }
 
-void hex_test(int test)
+void	hex_test(int test)
 {
 	int	num_chr1;
 	int	num_chr2;
@@ -120,7 +133,7 @@ void hex_test(int test)
 	printf("num of chr | %d\n", num_chr2);
 }
 
-void chr_test(char test)
+void	chr_test(char test)
 {
 	int	num_chr1;
 	int	num_chr2;
@@ -133,7 +146,7 @@ void chr_test(char test)
 	printf("num of chr | %d\n", num_chr2);
 }
 
-void str_test(char *test)
+void	str_test(char *test)
 {
 	int	num_chr1;
 	int	num_chr2;
@@ -146,7 +159,7 @@ void str_test(char *test)
 	printf("num of chr | %d\n", num_chr2);
 }
 
-void ptr_test(int test)
+void	ptr_test(int test)
 {
 	int	num_chr1;
 	int	num_chr2;
@@ -154,6 +167,19 @@ void ptr_test(int test)
 	num_chr1 = ft_printf("%p", &test);
 	printf("\n");
 	num_chr2 = printf("%p", &test);
+	printf("\n");
+	ft_printf("num of chr | %d\n", num_chr1);
+	printf("num of chr | %d\n", num_chr2);
+}
+
+void	null_ptr_test(int *test)
+{
+	int	num_chr1;
+	int	num_chr2;
+
+	num_chr1 = ft_printf("%p", (void *)test);
+	printf("\n");
+	num_chr2 = printf("%p", (void *)test);
 	printf("\n");
 	ft_printf("num of chr | %d\n", num_chr1);
 	printf("num of chr | %d\n", num_chr2);

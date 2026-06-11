@@ -1,5 +1,5 @@
 *.o
 *.a
-*a.out
+*.out
 objs/
 [practice]
