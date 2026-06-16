@@ -6,13 +6,13 @@
 /*   By: sliang <sliang@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/04/01 11:06:49 by sliang        #+#    #+#                 */
-/*   Updated: 2026/06/11 19:18:08 by sliang        ########   odam.nl         */
+/*   Updated: 2026/06/16 13:28:54 by sliang        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr(long n, int base, char *symbols)
+int	ft_putnbr(long n, unsigned int base, char *symbols)
 {
 	int	count;
 

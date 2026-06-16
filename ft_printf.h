@@ -6,7 +6,7 @@
 /*   By: sliang <sliang@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/06/04 11:33:46 by sliang        #+#    #+#                 */
-/*   Updated: 2026/06/11 19:18:28 by sliang        ########   odam.nl         */
+/*   Updated: 2026/06/16 13:29:13 by sliang        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ int	ft_printf(const char *format, ...);
 int	print_conversion(char specifier, va_list ptr_args);
 int	ft_putchr(int c);
 int	ft_putstr(char *s);
-int	ft_putnbr(long n, int base, char *symbols);
-int	ft_putptr(uintptr_t ptr, int base, char *symbols);
+int	ft_putnbr(long n, unsigned int base, char *symbols);
+int	ft_putnbr_unsigned(unsigned long n, unsigned int base, char *symbols);
+int	ft_putptr(uintptr_t ptr, unsigned int base, char *symbols);
 
 #endif

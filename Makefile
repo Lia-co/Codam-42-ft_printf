@@ -6,7 +6,7 @@
 #    By: shiyuan <shiyuan@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2026/06/03 12:53:29 by shiyuan       #+#    #+#                  #
-#    Updated: 2026/06/11 15:11:35 by sliang        ########   odam.nl          #
+#    Updated: 2026/06/16 13:19:53 by sliang        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRCS = 	ft_printf.c \
 		ft_putchr.c \
 		ft_putstr.c \
 		ft_putnbr.c \
+		ft_putnbr_unsigned.c \
 		ft_putptr.c \
 
 OBJS_DIR = objs

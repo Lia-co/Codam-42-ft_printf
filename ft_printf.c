@@ -6,7 +6,7 @@
 /*   By: sliang <sliang@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/06/06 16:13:49 by sliang        #+#    #+#                 */
-/*   Updated: 2026/06/11 19:18:21 by sliang        ########   odam.nl         */
+/*   Updated: 2026/06/16 13:30:00 by sliang        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,10 @@ int	ft_printf(const char *format, ...)
 	while (*format != '\0')
 	{
 		if (*format == '%')
-		{ 
+		{
 			if (*(format + 1) == '\0')
 				return (-1);
 			else
-			// else if (*(format + 1) != '\0')
 			{
 				format++;
 				num_chr += print_conversion(*format, ptr_args);
@@ -55,14 +54,14 @@ int	print_conversion(char specifier, va_list ptr_args)
 	else if (specifier == 'd' || specifier == 'i')
 		num_chr += ft_putnbr((long)va_arg(ptr_args, int), BASE_DEC, DEC);
 	else if (specifier == 'u')
-		num_chr += ft_putnbr((long)va_arg(ptr_args, unsigned int), BASE_DEC,
-				DEC);
+		num_chr += ft_putnbr_unsigned((unsigned long)va_arg(ptr_args,
+					unsigned int), BASE_DEC, DEC);
 	else if (specifier == 'x')
-		num_chr += ft_putnbr((long)va_arg(ptr_args, unsigned int), BASE_HEX,
-				HEX_LOW);
+		num_chr += ft_putnbr_unsigned((unsigned long)va_arg(ptr_args, unsigned int),
+				BASE_HEX, HEX_LOW);
 	else if (specifier == 'X')
-		num_chr += ft_putnbr((long)va_arg(ptr_args, unsigned int), BASE_HEX,
-				HEX_UPP);
+		num_chr += ft_putnbr_unsigned((unsigned long)va_arg(ptr_args, unsigned int),
+				BASE_HEX, HEX_UPP);
 	else if (specifier == 'p')
 		num_chr += ft_putptr((uintptr_t)va_arg(ptr_args, void *), BASE_HEX,
 				HEX_LOW);
