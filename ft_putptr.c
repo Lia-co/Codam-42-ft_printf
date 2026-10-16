@@ -6,7 +6,7 @@
 /*   By: sliang <sliang@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/06/04 13:30:02 by sliang        #+#    #+#                 */
-/*   Updated: 2026/06/16 13:32:32 by sliang        ########   odam.nl         */
+/*   Updated: 2026/06/16 13:39:17 by sliang        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,3 @@ int	ft_putptr(uintptr_t ptr, unsigned int base, char *symbols)
 		return (ft_putnbr_unsigned(ptr, base, symbols) + 2);
 	}
 }
-

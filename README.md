@@ -20,17 +20,20 @@ In my ft_printf main function part, it contains 1 helper function: print_convers
 
 In print_conversion function, there are three functions handle all cases. 
 
-| conversion  | Instruction                                                         |
-| ----------- | ------------------------------------------------------------------- |
-| ft_putchr   | only print one byte with write()                                    |
-| ft_putstr   | print byte with write() one by one in while loop while string is not arrive NULL terminator |
-| ft_putnbr   | handle digit input including integers, unsigned intergers, hexadecimal integers             |
-| ft_putstr   | handle pointers, which will be used for printing memory address                             |
+| conversion  | Instruction                                                                                                           |
+| ----------- | -------------------------------------------------------------------                                                   |
+| ft_putchr   | only print one byte with write()                                                                                      |
+| ft_putstr   | print byte with write() one by one in while loop while string is not arrive NULL terminator                           |
+| ft_putnbr   | handle digit input including integers                                                                                 |
+| ft_putnbr_unsigned   | handle digit input including unsigned intergers, hexadecimal integers                                        |
+| ft_putptr   | handle pointers, which will be used for printing memory address in hexademical format, call ft_putnbr_unsigned inside |
 
 In ft_putnbr function, number, base (10-digit or 16 digit base) and symbols (lowercase or uppercase) are passed as arguments. This function check three conditions. 
 - If the number is negative, it prints "-" first and convert number as postive to handle.
 - If the number is less than base (only one byte), it prints out the number.
 - If the number is outside of the base, in other words, more than two bytes to print, it goes into recursion session to distract digit and print from left to right.
+
+The reason to create ft_putnbr_unsigned function is to avoid data reinterpretation when passing different data types across different functions.
 
 
 # Instruction

@@ -6,7 +6,7 @@
 /*   By: sliang <sliang@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/06/06 16:13:49 by sliang        #+#    #+#                 */
-/*   Updated: 2026/06/16 13:30:00 by sliang        ########   odam.nl         */
+/*   Updated: 2026/06/16 13:39:00 by sliang        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,11 @@ int	print_conversion(char specifier, va_list ptr_args)
 		num_chr += ft_putnbr_unsigned((unsigned long)va_arg(ptr_args,
 					unsigned int), BASE_DEC, DEC);
 	else if (specifier == 'x')
-		num_chr += ft_putnbr_unsigned((unsigned long)va_arg(ptr_args, unsigned int),
-				BASE_HEX, HEX_LOW);
+		num_chr += ft_putnbr_unsigned((unsigned long)va_arg(ptr_args,
+					unsigned int), BASE_HEX, HEX_LOW);
 	else if (specifier == 'X')
-		num_chr += ft_putnbr_unsigned((unsigned long)va_arg(ptr_args, unsigned int),
-				BASE_HEX, HEX_UPP);
+		num_chr += ft_putnbr_unsigned((unsigned long)va_arg(ptr_args,
+					unsigned int), BASE_HEX, HEX_UPP);
 	else if (specifier == 'p')
 		num_chr += ft_putptr((uintptr_t)va_arg(ptr_args, void *), BASE_HEX,
 				HEX_LOW);
